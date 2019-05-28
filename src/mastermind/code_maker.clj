@@ -7,5 +7,6 @@
 
 
 (defn score [code guess]
-  [(position-matches code guess)]
+  [(position-matches code guess)
+   0]
   )
