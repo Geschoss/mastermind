@@ -6,4 +6,6 @@
   :dependencies [[org.clojure/clojure "1.10.0"]]
   :main ^:skip-aot mastermind.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}})
+  :profiles {:dev {:dependencies [[midje "1.9.8"]]
+                   :plugins [[lein-midje "3.2.1"]]}
+             :uberjar {:aot :all}})

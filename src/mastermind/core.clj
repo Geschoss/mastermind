@@ -1,7 +1,5 @@
 (ns mastermind.core
   (:gen-class))
 
-(defn -main
-  "I don't do a whole lot ... yet."
-  [& args]
+(defn -main []
   (println "Hello, World!"))
