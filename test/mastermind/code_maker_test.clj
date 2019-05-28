@@ -8,9 +8,16 @@
     "score guess with no matches"
     (score [0 0 0 0] [1 1 1 1]) => [0])
   (fact
-    "score guess with one :pos math"
+    "score guess with one position math"
     (score [0 0 0 0] [0 1 1 1]) => [1])
   (fact
-    "score with two :pos matches"
-    (score [0 0 0 0] [0 1 1 0]) => [2])
+    "score with two position matches"
+    (score [0 0 0 0] [0 1 1 0]) => [2]
+    (score [0 0 0 0] [1 0 1 0]) => [2]
+    (score [0 0 0 0] [0 1 0 1]) => [2])
+  (fact
+    "score with many position mathces"
+    (score [1 1 1 1] [0 1 1 1]) => [3]
+    (score [0 0 0 0] [0 0 0 1]) => [3]
+    (score [1 2 3 4] [1 2 3 4]) => [4])
   )
