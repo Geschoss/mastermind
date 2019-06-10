@@ -43,6 +43,13 @@
     "Walk through solution of code [1 2 3 4]"
     (break-code
       [0 0 0 0]
-      [[0 0 0 0] [0 0]]) => [1 1 1 1])
+      [[[0 0 0 0] [0 0]]]) => [1 1 1 1]
+    )
+  (fact
+    "first step for code [0 0 0 1]"
+    (break-code
+      [0 0 0 0]
+      [[[0 0 0 0] [3 0]]]) => [0 0 0 1]
+    )
   )
 
