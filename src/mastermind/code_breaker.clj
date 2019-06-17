@@ -20,11 +20,11 @@
   (loop [guess (inc-guess last-guess)]
     (if (= guess [0 0 0 0])
       :error
-      (let [past-guess (first past-guesses)]
-        (if (= (cm/score guess (first past-guess))
-               (second past-guess))
-          guess
-          (recur (inc-guess guess)))))))
+      (if (every? identity (for [past-guess past-guesses]
+                             (= (cm/score guess (first past-guess))
+                                (second past-guess))))
+        guess
+        (recur (inc-guess guess))))))
 
 (defn break-code [last-guess past-guesses]
   (if (nil? last-guess)
